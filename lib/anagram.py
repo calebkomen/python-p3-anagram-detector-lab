@@ -1,19 +1,6 @@
-# your code goes here!
-# lib/anagram.py
-
 class Anagram:
-    def __init__(self, word):
+    def _init_(self, word):
         self.word = word
-    
-    def match(self, words_list):
-        # Sorting the letters of the word initialized
-        sorted_word = sorted(self.word)
-        # List to hold the anagrams
-        anagrams = []
-        
-        for word in words_list:
-            # Check if the sorted letters of the current word match the sorted letters of the initialized word
-            if sorted(word) == sorted_word:
-                anagrams.append(word)
-        
-        return anagrams
+
+    def match(self, words):
+        return [w for w in words if sorted(w.lower()) == sorted(self.word.lower()) and w.lower() != self.word.lower()]
